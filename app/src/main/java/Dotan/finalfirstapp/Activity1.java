@@ -13,8 +13,8 @@ public class Activity1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1);
-
+        String[] lst =  {"a","b","c","d"};
         RecyclerView lst1 = (RecyclerView) findViewById(R.id.RecyclerView);
-        lst1.setLayoutManager(new LinearLayoutManager(this));
+        ListAdapter list = new ListAdapter(lst);
     }
 }
