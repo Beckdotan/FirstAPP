@@ -15,17 +15,15 @@ public class Activity1 extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_1);
-        String[] lst =  {"a","b","c","d",
-                "a","b","c","d",
-                "a","b","c","d",
-                "a","b","c","d",
-                "a","b","c","d",
-                "a","b","c","d",
-                "a","b","c","d",
-                "a","b","c","d",
-                "a","b","c","d",
-                "a","b","c","d",
-                "a","b","c","d",};
+        String[] lst =  {"Israel","China","England","Romania"};
+
+
+        int[] images = {R.drawable.israel, R.drawable.chaina, R.drawable.england, R.drawable.romania};
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        ListAdapter listAdapter = new ListAdapter(this, lst, images);
+        recyclerView.setAdapter(listAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
 
         //Somthing in those things make the app collaps when i press button 1

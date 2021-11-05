@@ -7,10 +7,10 @@
     tools:context=".Activity2">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="288dp"
-        android:layout_height="540dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="256dp"
+        android:id="@+id/recyclerView"
+        android:layout_width="403dp"
+        android:layout_height="676dp"
+        android:layout_marginStart="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
