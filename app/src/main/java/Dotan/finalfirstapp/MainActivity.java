@@ -15,32 +15,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //creating button1 and make  a listener and open activity 1
         button1 =(Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity1();
+                openActivity(Activity1.class);
             }
         });
 
+        //creating button2 and make a listener and open activity 1
         button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity2();
+                openActivity(Activity2.class);
             }
         });
 
     }
+    //helping functions to open activity
+    public void openActivity(Class cl){
+            Intent intent = new Intent(this,cl);
+            startActivity(intent);
 
-    public void openActivity1(){
-        Intent intent = new Intent(this,Activity1.class);
-        startActivity(intent);
-    }
-
-    public void openActivity2(){
-        Intent intent = new Intent(this,Activity2.class);
-        startActivity(intent);
     }
 
 }

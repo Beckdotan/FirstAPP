@@ -12,65 +12,47 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
+
     private String[] text;
     Context context;
     int[] imgs;
 
-
+    //Adapter constructor
     public ListAdapter(Context ct, String[] tx, int[] img ) {
         context = ct;
         text = tx;
         imgs= img;
 
     }
-/*
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView mTextView;
 
-        public MyViewHolder(TextView view) {
-            super(view);
-            mTextView = view;
-        }
-    }
-*/
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
+        //creating a new layout objects
         LayoutInflater inflater = LayoutInflater.from((context));
+        //init it to holder layout.
         View view = inflater.inflate(R.layout.holder_layout, parent, false);
         return new MyViewHolder(view);
-
-
-        /*
-        TextView textView = new TextView(parent.getContext());
-        MyViewHolder holder = new MyViewHolder(textView);
-
-        return holder;
-         */
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+       //setting the text and picture for every raw
         holder.myText.setText(text[position]);
         holder.myImg.setImageResource(imgs[position]);
     }
-/*
-    //@Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        String textForDisplay = text[position];
-        ((MyViewHolder)holder).mTextView.setText(textForDisplay);
-    }
-*/
+
     @Override
     public int getItemCount() {
         return text.length;
     }
 
+    //Other Class for init the objects in the holder layout to the page itself
     public class MyViewHolder extends RecyclerView.ViewHolder{
         TextView myText;
         ImageView myImg;
 
+        //constructor
         public  MyViewHolder(@NonNull View itemView){
             super(itemView);
             myText = itemView.findViewById(R.id.text);
