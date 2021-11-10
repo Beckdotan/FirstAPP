@@ -52,7 +52,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
         TextView myText;
         ImageView myImg;
 
-        //constructor
+        constructor
         public  MyViewHolder(@NonNull View itemView){
             super(itemView);
             myText = itemView.findViewById(R.id.text);
